@@ -1,0 +1,16 @@
+{
+  "name": "web_ch_19",
+  "version": "1.0.0",
+  "description": "Bikin Web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ahmad Ainul Yaqin",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
