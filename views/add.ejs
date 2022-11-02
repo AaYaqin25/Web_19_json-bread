@@ -13,11 +13,14 @@
 
     <div>
         <form action="" method="post">
+            <label for="Id"> ID</label>
+            <input type="text" name="Id" id="Id" placeholder="ID" >
+            <br>
             <label for="String"> String</label>
-            <input type="text" name="String" id="String" placeholder="String">
+            <input type="text" name="String" id="String" placeholder="String" >
             <br>
             <label for="Integer"> Integer</label>
-            <input type="text" name="Integer" id="Integer" placeholder="Integer">
+            <input type="number" name="Integer" id="Integer" placeholder="Integer">
             <br>
             <label for="Float"> Float</label>
             <input type="text" name="Float" id="Float" placeholder="Float">
@@ -27,9 +30,9 @@
             <br>
             <label for="Boolean"> Boolean</label>
             <select name="Boolean" id="Boolean" aria-placeholder="Choose the boolean">
-                <option value=""></option>
-                <option value="true">True</option>
-                <option value="false">False</option>
+                <option value="" disabled selected hidden>Choose the boolean</option>
+                <option value=true>True</option>
+                <option value=false>False</option>
             </select>
             <br>
             <p><button type="submit">Save</button></p>

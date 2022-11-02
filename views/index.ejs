@@ -76,7 +76,7 @@
         <form>
             <input type="checkbox" id="ID" name="ID">
             <label for="ID"> ID </label>
-            <input type="text" name="ID" id="ID" placeholder="ID">
+            <input type="number" name="ID" id="ID" placeholder="ID">
             <br>
             <input type="checkbox" id="String" name="String">
             <label for="String"> String</label>
@@ -84,7 +84,7 @@
             <br>
             <input type="checkbox" id="Integer" name="Integer">
             <label for="Integer"> Integer</label>
-            <input type="text" name="Integer" id="Integer" placeholder="Integer">
+            <input type="number" name="Integer" id="Integer" placeholder="Integer">
             <br>
             <input type="checkbox" id="Float" name="Float">
             <label for="Float"> Float</label>
@@ -99,9 +99,9 @@
             <input type="checkbox" id="Boolean" name="Boolean">
             <label for="Boolean"> Boolean</label>
             <select name="Boolean" id="Boolean">
-                <option value=""></option>
-                <option value="true">True</option>
-                <option value="false">False</option>
+                <option value="" selected disabled hidden>Choose the boolean</option>
+                <option value=true>True</option>
+                <option value=false>False</option>
             </select>
             <br>
             <p><button class="search" type="submit"><strong>Search</strong></button></p>
@@ -140,8 +140,8 @@
                         <td>
                             <%= item.boolean%>
                         </td>
-                        <td><Button class="edit" type="button"><a href="/edit">Edit</a></Button>
-                            <button class="delete" type="button"><a href="/delete">Delete</a></button>
+                        <td><Button class="edit" type="button"><a href="/edit/<%= index %>"><strong>Edit</strong> </a></Button>
+                            <button class="delete" type="button"><a href="/delete/<%= index %>"><strong>Delete</strong></a></button>
                         </td>
                     </tr>
                     <% })%>

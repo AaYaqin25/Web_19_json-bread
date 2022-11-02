@@ -40,10 +40,30 @@ app.post('/add', (req, res) => {
 
 })
 
-app.get('/add', (req, res) => {
-  res.render('edit');
+app.get("/delete/:id", (req, res) => {
+  const index = req.params.id
+  data.splice(index, 1);
+  fs.writeFileSync("web.json", JSON.stringify(data, null, 3), "utf-8");
+  res.redirect("/");
 })
- 
+
+app.get("/edit/:id", (req, res) => {
+  const index = req.params.id
+  res.render("edit", { item: data[index] });
+})
+
+app.post("/edit/:id", (req, res) => {
+  const index = req.params.id
+  data[i] = {
+    string: req.body.String,
+    integer: req.body.Integer,
+    float: req.body.Float,
+    date: req.body.Date,
+    boolean: req.body.Boolean
+  }
+  res.redirect('/');
+})
+
 app.listen(port, () => {
   console.log(`Aplikasi berjalan di port ${port}`);
 })

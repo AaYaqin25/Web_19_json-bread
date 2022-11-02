@@ -1,23 +1,23 @@
 [
    {
-      "string": "Test",
-      "integer": 25,
-      "float": 2.5,
-      "date": "25-09-1999",
-      "boolean": true
-   },
-   {
       "string": "Yaqin",
       "integer": "25",
       "float": "2.5",
-      "date": "25-09-1999",
+      "date": "25 September 1999",
+      "boolean": "true"
+   },
+   {
+      "string": "Tantowi",
+      "integer": "20",
+      "float": "2.0",
+      "date": "20 September 1997",
       "boolean": "false"
    },
    {
-      "string": "gas",
-      "integer": "20",
-      "float": "2.0",
-      "date": "20-08-1999",
-      "boolean": "true"
+      "string": "Fajar",
+      "integer": "21",
+      "float": "1.2",
+      "date": "17 Agusutus 2004",
+      "boolean": "false"
    }
 ]
