@@ -54,13 +54,14 @@ app.get("/edit/:id", (req, res) => {
 
 app.post("/edit/:id", (req, res) => {
   const index = req.params.id
-  data[i] = {
+  data[index] = {
     string: req.body.String,
     integer: req.body.Integer,
     float: req.body.Float,
     date: req.body.Date,
     boolean: req.body.Boolean
   }
+  fs.writeFileSync("web.json", JSON.stringify(data, null, 3), "utf-8");
   res.redirect('/');
 })
 

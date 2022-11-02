@@ -1,10 +1,10 @@
 [
    {
-      "string": "Yaqin",
-      "integer": "25",
-      "float": "2.5",
+      "string": "Aqin",
+      "integer": "777",
+      "float": "7,7,7",
       "date": "25 September 1999",
-      "boolean": "true"
+      "boolean": ""
    },
    {
       "string": "Tantowi",
