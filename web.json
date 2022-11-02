@@ -1,12 +1,5 @@
 [
    {
-      "string": "Aqin",
-      "integer": "777",
-      "float": "7,7,7",
-      "date": "25 September 1999",
-      "boolean": ""
-   },
-   {
       "string": "Tantowi",
       "integer": "20",
       "float": "2.0",
@@ -19,5 +12,12 @@
       "float": "1.2",
       "date": "17 Agusutus 2004",
       "boolean": "false"
+   },
+   {
+      "string": "Yaqin",
+      "integer": "25",
+      "float": "2.5",
+      "date": "25 September 1999",
+      "boolean": "true"
    }
 ]

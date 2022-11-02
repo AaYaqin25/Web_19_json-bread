@@ -25,17 +25,14 @@
         }
 
         .edit {
-            color: ghostwhite;
             background-color: green;
         }
 
         .delete {
-            color: honeydew;
             background-color: red;
         }
 
         .search {
-            color: blanchedalmond;
             background-color: blue;
         }
 
@@ -64,6 +61,67 @@
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        input[type=number],
+        select {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type=datetime] {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            margin: 6px 4px;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block
+        }
+
+        button {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            margin: 6px 4px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .row::before {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -74,35 +132,73 @@
     </div>
     <div>
         <form>
-            <input type="checkbox" id="ID" name="ID">
-            <label for="ID"> ID </label>
-            <input type="number" name="ID" id="ID" placeholder="ID">
+            <div class="row">
+                <div class="col-25">
+                    <input type="checkbox" id="ID" name="ID">
+                    <label for="ID"> ID </label>
+                </div>
+                <div class="col-75">
+                    <input type="number" name="ID" id="ID" placeholder="ID">
+                </div>
+            </div>
             <br>
-            <input type="checkbox" id="String" name="String">
-            <label for="String"> String</label>
-            <input type="text" name="String" id="String" placeholder="String">
+            <div class="row">
+                <div class="col-25">
+                    <input type="checkbox" id="String" name="String">
+                    <label for="String"> String</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="String" id="String" placeholder="String">
+                </div>
+            </div>
             <br>
-            <input type="checkbox" id="Integer" name="Integer">
-            <label for="Integer"> Integer</label>
-            <input type="number" name="Integer" id="Integer" placeholder="Integer">
+            <div class="row">
+                <div class="col-25">
+                    <input type="checkbox" id="Integer" name="Integer">
+                    <label for="Integer"> Integer</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" name="Integer" id="Integer" placeholder="Integer">
+                </div>
+            </div>
             <br>
-            <input type="checkbox" id="Float" name="Float">
-            <label for="Float"> Float</label>
-            <input type="text" name="Float" id="Float" placeholder="Float">
+            <div class="row">
+                <div class="col-25">
+                    <input type="checkbox" id="Float" name="Float">
+                    <label for="Float"> Float</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="Float" id="Float" placeholder="Float">
+                </div>
+            </div>
             <br>
-            <input type="checkbox" id="Date" name="Date">
-            <label for="Date"> Date</label>
-            <input type="datetime" name="Date" id="Date" placeholder="start date">
-            <span>to</span>
-            <input type="datetime" name="Date" id="Date" placeholder="end date">
+            <div class="row">
+                <div class="col-25">
+                    <input type="checkbox" id="Date" name="Date">
+                    <label for="Date"> Date</label>
+                </div>
+                <div class="col-75">
+                    <input type="datetime" name="Date" id="Date" placeholder="start date">
+                    <br>
+                    <span>to</span>
+                    <br>
+                    <input type="datetime" name="Date" id="Date" placeholder="end date">
+                </div>
+            </div>
             <br>
-            <input type="checkbox" id="Boolean" name="Boolean">
-            <label for="Boolean"> Boolean</label>
-            <select name="Boolean" id="Boolean">
-                <option value="" selected disabled hidden>Choose the boolean</option>
-                <option value=true>True</option>
-                <option value=false>False</option>
-            </select>
+            <div class="row">
+                <div class="col-25">
+                    <input type="checkbox" id="Boolean" name="Boolean">
+                    <label for="Boolean"> Boolean</label>
+                </div>
+                <div class="col-75">
+                    <select name="Boolean" id="Boolean">
+                        <option value="" selected disabled hidden>Choose the boolean</option>
+                        <option value=true>True</option>
+                        <option value=false>False</option>
+                    </select>
+                </div>
+            </div>
             <br>
             <p><button class="search" type="submit"><strong>Search</strong></button></p>
         </form>
@@ -140,7 +236,8 @@
                         <td>
                             <%= item.boolean%>
                         </td>
-                        <td><Button class="edit" type="button"><a href="/edit/<%= index %>"><strong>Edit</strong> </a></Button>
+                        <td>
+                            <Button class="edit" type="button"><a href="/edit/<%= index %>"><strong>Edit</strong></a></Button>
                             <button class="delete" type="button"><a href="/delete/<%= index %>"><strong>Delete</strong></a></button>
                         </td>
                     </tr>
@@ -161,10 +258,10 @@
         </p>
     </div>
     <div>
-        <p>
-            <button class="add" type="button"><a href="/add"><strong>Add</strong> </a></button>
-        </p>
-    </div> 
+        <form method="get" action="/add">
+            <input type="submit" value="Add" />
+        </form>
+    </div>
 </body>
 
 </html>
