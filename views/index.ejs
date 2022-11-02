@@ -1,20 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .edit {
+            color: ghostwhite;
+            background-color: green;
+        }
+
+        .delete {
+            color: honeydew;
+            background-color: red;
+        }
+
+        .search {
+            color: blanchedalmond;
+            background-color: blue;
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        .pagination a:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .pagination a:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
     </style>
 </head>
+
 <body>
     <div>
         <h1>BREAD(Browse, Read, Edit, Add, Delete)</h1>
         <h2>Filters</h2>
-        <h4>ID</h4>
+    </div>
+    <div>
+        <form>
+            <input type="checkbox" id="ID" name="ID">
+            <label for="ID"> ID </label>
+            <input type="text" name="ID" id="ID" placeholder="ID">
+            <br>
+            <input type="checkbox" id="String" name="String">
+            <label for="String"> String</label>
+            <input type="text" name="String" id="String" placeholder="String">
+            <br>
+            <input type="checkbox" id="Integer" name="Integer">
+            <label for="Integer"> Integer</label>
+            <input type="text" name="Integer" id="Integer" placeholder="Integer">
+            <br>
+            <input type="checkbox" id="Float" name="Float">
+            <label for="Float"> Float</label>
+            <input type="text" name="Float" id="Float" placeholder="Float">
+            <br>
+            <input type="checkbox" id="Date" name="Date">
+            <label for="Date"> Date</label>
+            <input type="datetime" name="Date" id="Date" placeholder="start date">
+            <span>to</span>
+            <input type="datetime" name="Date" id="Date" placeholder="end date">
+            <br>
+            <input type="checkbox" id="Boolean" name="Boolean">
+            <label for="Boolean"> Boolean</label>
+            <select name="Boolean" id="Boolean">
+                <option value=""></option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+            <br>
+            <p><button class="search" type="submit"><strong>Search</strong></button></p>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>String</th>
+                    <th>Integer</th>
+                    <th>Float</th>
+                    <th>Date</th>
+                    <th>Boolean</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% inputData.forEach((item, index)=>{ %>
+                    <tr>
+                        <td>
+                            <%= index + 1%>
+                        </td>
+                        <td>
+                            <%= item.string%>
+                        </td>
+                        <td>
+                            <%= item.integer%>
+                        </td>
+                        <td>
+                            <%= item.float%>
+                        </td>
+                        <td>
+                            <%= item.date%>
+                        </td>
+                        <td>
+                            <%= item.boolean%>
+                        </td>
+                        <td><Button class="edit" type="button"><a href="/edit">Edit</a></Button>
+                            <button class="delete" type="button"><a href="/delete">Delete</a></button>
+                        </td>
+                    </tr>
+                    <% })%>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <p>
+            <a href="#">Previous</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">Next</a>
+        </p>
+    </div>
+    <div>
+        <p>
+            <button class="add" type="button"><a href="/add"><strong>Add</strong> </a></button>
+        </p>
     </div>
 </body>
-   
+
 </html>
