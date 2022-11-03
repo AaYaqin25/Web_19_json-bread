@@ -59,15 +59,7 @@
     <h1>Edit Data</h1>
 
     <form action="" method="post">
-        <div class="row">
-            <div class="col-25">
-                <label for="ID"> ID </label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="ID" name="ID" value="1" disabled>
-            </div>
-        </div>
-        <br>
+        
         <div class="row">
             <div class="col-25">
                 <label for="String"> String</label>
@@ -110,8 +102,8 @@
             </div>
             <div class="col-75">
                 <select id="Boolean" name="Boolean">
-                    <option value="<% item.boolean == 'true' ? 'selected' : '' %>">true</option>
-                    <option value="<% item.boolean == 'false' ? 'selected' : ''%>">false</option>
+                    <option value="true" <%= item.boolean == 'true'? 'selected' : '' %>>true</option>
+                    <option value="false" <%= item.boolean == 'false' ? 'selected' : ''%>>false</option>
                 </select>
             </div>
         </div>
